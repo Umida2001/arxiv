@@ -1,0 +1,252 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container with Grid layout for overall structure */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    min-height: calc(100vh - 40px);
+}
+
+/* Header styles */
+header {
+    background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Navigation with Grid */
+nav {
+    background: #34495e;
+    padding: 15px 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+    gap: 15px;
+    border-bottom: 3px solid #f39c12;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    text-align: center;
+}
+
+nav a:hover {
+    background: #f39c12;
+    transform: translateY(-2px);
+}
+
+/* Main content */
+main {
+    padding: 40px;
+}
+
+/* Card grid using CSS Grid - основной Grid макет */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 3px solid #f39c12;
+}
+
+.card-content {
+    padding: 20px;
+    display: grid;
+    gap: 15px;
+}
+
+.card-content h3 {
+    color: #2c3e50;
+    font-size: 1.4rem;
+}
+
+.card-content p {
+    color: #7f8c8d;
+    line-height: 1.5;
+}
+
+.btn {
+    background: #f39c12;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-align: center;
+    transition: background 0.3s ease;
+    justify-self: start;
+}
+
+.btn:hover {
+    background: #e67e22;
+}
+
+/* Document page styles with Grid */
+.doc-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.doc-image img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.doc-text {
+    display: grid;
+    gap: 20px;
+}
+
+.doc-text h2 {
+    color: #2c3e50;
+    border-left: 5px solid #f39c12;
+    padding-left: 15px;
+}
+
+.doc-text p {
+    line-height: 1.7;
+    color: #2c3e50;
+}
+
+.meta-info {
+    background: #ecf0f1;
+    padding: 15px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    gap: 15px;
+}
+
+.meta-info span {
+    color: #f39c12;
+    font-weight: bold;
+}
+
+/* Gallery section with Grid (дополнительно) */
+.gallery {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 2px solid #ecf0f1;
+}
+
+.gallery h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    font-size: 0.9rem;
+}
+
+/* Responsive with Grid */
+@media (max-width: 768px) {
+    main {
+        padding: 20px;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .doc-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .meta-info {
+        grid-template-columns: 1fr;
+    }
+    
+    nav {
+        grid-template-columns: 1fr;
+    }
+}
